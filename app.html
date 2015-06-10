@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link href="css/Bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="css/multiselect.css" media="screen" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+	<div class="container-fluid" ng-app="appContent" ng-controller="appController" style="padding-top:12%;padding-left:33%">
+		<div class="row">
+			<aadropdownmultiselect maxlenghttoshowselectedvalues="3" onchangeeventofcheckbox="setTabDirty()" model="selectedOptions" multiselectoptions="options"></aadropdownmultiselect>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/Angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/Angular/multiselectdropdown.js"></script>
+	<script type="text/javascript" src="js/Angular/ui-bootstrap-tpls-0.13.0.min.js"></script>
+	<script type="text/javascript">
+	var doOnLoad = function(){
+		debugger;
+		var appContentModule = angular.module("appContent", ['ui.bootstrap', 'aaangularjsapplication'])
+
+		appContentModule.controller("appController", ['$scope', '$http', function ($scope, $http) {
+
+			$scope.selectedOptions = [{
+					Value:'1',
+					Text:'Bangalore',
+					Selected:'1'
+			},{
+					Value:'2',
+					Text:'Goa',
+					Selected:'1'
+			},{
+					Value:'3',
+					Text:'Nainital',
+					Selected:'1'
+			}];
+
+			$scope.options = [{
+					Value:'1',
+					Text:'Bangalore'
+			},{
+					Value:'2',
+					Text:'Goa'
+			},{
+					Value:'3',
+					Text:'Nainital'
+			},{
+					Value:'4',
+					Text:'Hyderabad'
+			},{
+					Value:'5',
+					Text:'Mumbai'
+			},{
+					Value:'6',
+					Text:'Delhi'
+			},{
+					Value:'7',
+					Text:'Ladakh'
+			},{
+					Value:'8',
+					Text:'Jaisalmer'
+			},{
+					Value:'9',
+					Text:'Udaipur'
+			}];
+
+		}]);
+
+	}();
+	</script>
+</body>
+</html>
